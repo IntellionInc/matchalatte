@@ -1,0 +1,23 @@
+{
+  "name": "@intellion/matchalatte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IntellionInc/matchalatte.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IntellionInc/matchalatte/issues"
+  },
+  "homepage": "https://github.com/IntellionInc/matchalatte#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "sinon": "^9.0.2"
+  }
+}
