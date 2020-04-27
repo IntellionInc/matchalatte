@@ -39,7 +39,7 @@ module.exports = class Stub {
     return this;
   };
   with = (...args) => {
-    this.whenCalledWith(...args);
+    this.args = args;
     afterEach(() => {
       this.call ?
         sinon.assert.calledWithExactly(this.stub.getCall(this.call), ...this.args)
