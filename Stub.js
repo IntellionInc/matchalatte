@@ -3,10 +3,20 @@ let sinon = require("sinon");
 module.exports = class Stub {
   constructor(object) { this._obj = object };
   and = this;
-
+  doesnt = () => this.notCalled = true;
+  receive = this.receives;
   receives = (key) => {
-    this._obj[key] = sinon.stub();
-    this.stub = this._obj[key];
+    switch (this.notCalled) {
+      case true:
+        afterEach(() => {
+          sinon.assert.notCalled(this.stub);
+        });
+        break;
+      default:
+        this._obj[key] = sinon.stub();
+        this.stub = this._obj[key];
+        break;
+    };
     return this;
   };
   onCall = (callNumber) => {
