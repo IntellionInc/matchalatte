@@ -7,6 +7,8 @@ module.exports = class Stub {
   receives = (key) => {
     switch (this.notCalled) {
       case true:
+        this._obj[key] = sinon.stub();
+        this.stub = this._obj[key];
         afterEach(() => {
           sinon.assert.notCalled(this.stub);
         });
