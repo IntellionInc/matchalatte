@@ -3,7 +3,7 @@ let sinon = require("sinon");
 module.exports = class Stub {
   constructor(object) { this._obj = object };
   and = this;
-  doesnt = () => this.notCalled = true;
+  doesnt = () => { this.notCalled = true; return this; };
   receive = this.receives;
   receives = (key) => {
     switch (this.notCalled) {
