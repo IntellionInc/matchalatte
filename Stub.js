@@ -51,6 +51,13 @@ module.exports = class Stub {
       this.stub.rejects(value);
     return this;
   };
+  andThrows = value => {
+    this.call ?
+      this.stub.onCall(this.call).throws(value)
+      :
+      this.stub.throws(value);
+    return this;
+  };
   with = (...args) => {
     this.args = args;
     afterEach(() => {
