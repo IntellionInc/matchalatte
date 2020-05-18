@@ -28,7 +28,7 @@ module.exports = class Assertion {
     if (this.assertions) { this.assertions() };
   };
 
-  throw = error => expect(this._obj.bind(this, ...this.args)).to.throw();
+  throw = error => expect(this._obj.bind({}, ...this.args)).to.throw(error);
 
   loosely = () => {
     this.loosely = true;
