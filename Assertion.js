@@ -28,6 +28,10 @@ module.exports = class Assertion {
     if (this.assertions) { this.assertions() };
   };
 
+  throw = async error => {
+    expect(this._obj.bind(this, ...args)).to.throw();
+  };
+
   loosely = () => {
     this.loosely = true;
     return this;
