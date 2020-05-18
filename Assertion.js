@@ -29,7 +29,7 @@ module.exports = class Assertion {
   };
 
   throw = async error => {
-    expect(this._obj.bind(this, ...args)).to.throw();
+    expect(this._obj.bind(this, ...this.args)).to.throw();
   };
 
   loosely = () => {
