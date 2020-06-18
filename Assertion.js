@@ -49,6 +49,7 @@ module.exports = class Assertion {
 
   succeed = async () => {
     let result = await this._obj(...this.args).catch(error => error);
+    expect(result).not.to.be.an.instanceOf(Error);
     if (this.assertions) { this.assertions(result) };
   };
 };
